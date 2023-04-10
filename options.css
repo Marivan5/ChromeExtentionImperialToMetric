@@ -1,0 +1,15 @@
+body {
+  margin: 5px;
+  font-family: Arial, sans-serif;
+  display: inline-block;
+  width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+	
+}

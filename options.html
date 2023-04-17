@@ -8,43 +8,51 @@
     <h1>Unit Converter Options</h1>
     <form id="optionsForm">
       <label>
-        <input type="checkbox" name="fahrenheitToCelsius" checked>
+        <input type="checkbox" name="fahrenheitToCelsiusEnabled">
+        <input type="number" name="fahrenheitToCelsiusRound" min="0.01" />
         Fahrenheit to Celsius
       </label>
-	  <label>
-        <input type="checkbox" name="feetAndInchesToMeters" checked>
+      <label>
+        <input type="checkbox" name="feetAndInchesToMetersEnabled" id="feetAndInchesToMetersCheckbox">
+        <input type="number" name="feetAndInchesToMetersRound" min="0.01" />
         Feet And Inches To Meters
       </label>
-	  <label>
-        <input type="checkbox" name="feetToMeters" checked>
+      <label id="feetToMetersLabel">
+        <input type="checkbox" name="feetToMetersEnabled">
+        <input type="number" name="feetToMetersRound" min="0.01" />
         Feet To Meters
       </label>
-	  <label>
-        <input type="checkbox" name="inchesToCentimeters" checked>
+      <label id="inchesToCentimetersLabel">
+        <input type="checkbox" name="inchesToCentimetersEnabled">
+        <input type="number" name="inchesToCentimetersRound" min="0.01" />
         Inches To Centimeters
       </label>
-	  <label>
-        <input type="checkbox" name="milesToKilometers" checked>
+      <label>
+        <input type="checkbox" name="milesToKilometersEnabled">
+        <input type="number" name="milesToKilometersRound" min="0.01" />
         Miles To Kilometers
       </label>
-	  <label>
-        <input type="checkbox" name="mphToKmph" checked>
+      <label>
+        <input type="checkbox" name="mphToKmphEnabled">
+        <input type="number" name="mphToKmphRound" min="0.01" />
         Mph To Kmph
       </label>
-	  <label>
-        <input type="checkbox" name="poundsToKilograms" checked>
+      <label>
+        <input type="checkbox" name="poundsToKilogramsEnabled">
+        <input type="number" name="poundsToKilogramsRound" min="0.01" />
         Pounds To Kilograms
       </label>
-	  <label>
-        <input type="checkbox" name="cupsToDeciliters" checked>
+      <label>
+        <input type="checkbox" name="cupsToDecilitersEnabled">
+        <input type="number" name="cupsToDecilitersRound" min="0.01" />
         Cups To Deciliters
       </label>
-	   <label>
-        <input type="checkbox" name="gallonsToLiters" checked>
+      <label>
+        <input type="checkbox" name="gallonsToLitersEnabled">
+        <input type="number" name="gallonsToLitersRound" min="0.01" />
         Gallons To Liters
       </label>
     </form>
-    <button id="saveOptions">Save</button>
     <script src="options.js"></script>
   </body>
 </html>

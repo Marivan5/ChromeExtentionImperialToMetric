@@ -4,6 +4,10 @@ chrome.runtime.sendMessage({ action: 'getOptions' }, (options) => {
 	}
 });
 
+function roundToNearest(value, nearest) {
+	return Math.round(value / nearest) * nearest;
+}
+
 function fahrenheitToCelsius(tempInFahrenheit) {
 	tempInFahrenheit = parseFloat(tempInFahrenheit)
 	return (tempInFahrenheit - 32) * 5 / 9;
@@ -148,7 +152,7 @@ function replaceText(node, options) {
 			let newText = node.textContent;
 			newText = node.textContent.split(findWord).join(replaceWith);
 			for (const conversion of conversions) {
-				if (!options[conversion.name]) {
+				if (!options[conversion.name + "Enabled"]) {
 					continue;
 				}
 				if (conversion.condition && !conversion.condition(newText)) {
@@ -165,7 +169,8 @@ function replaceText(node, options) {
 					}
 					
 					const metricValue = conversion.converter(value);
-					return metricValue === null ? match : `${match} (${metricValue.toFixed(conversion.decimalPoints)}${conversion.unit})`;
+					//return metricValue === null ? match : `${match} (${metricValue.toFixed(conversion.decimalPoints)}${conversion.unit})`;
+					return metricValue === null ? match : `${match} (${roundToNearest(metricValue, options[conversion.name + "Round"])}${conversion.unit})`;
 				});
 			}
 			node.textContent = newText;

@@ -75,9 +75,6 @@ function feetAndInchesToMeters(input) {
 	return feetToMeters(feet) + inchesToCentimeters(inches) / 100;
 }
 
-const findWord = ' enplansvilla';
-const replaceWith = ' sexkällare';
-
 function replaceText(node, options) {
 	if (node.nodeType === Node.TEXT_NODE) {
 		if (node.textContent.trim() !== '') {
@@ -150,7 +147,7 @@ function replaceText(node, options) {
 		];
 		  
 			let newText = node.textContent;
-			newText = node.textContent.split(findWord).join(replaceWith);
+			//newText = node.textContent.split(findWord).join(replaceWith);
 			for (const conversion of conversions) {
 				if (!options[conversion.name + "Enabled"]) {
 					continue;

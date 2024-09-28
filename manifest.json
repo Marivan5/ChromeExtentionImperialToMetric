@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Imperial to metric converter",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Replace imperial units with metric units.",
   "permissions": ["storage"],
   "background": {

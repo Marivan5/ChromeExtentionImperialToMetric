@@ -10,9 +10,9 @@ function saveOptions() {
     options[number.name] = number.value;
   })
 
-  // chrome.storage.local.set(options, () => {
-  //   alert('Options saved.');
-  // });
+  chrome.storage.local.set(options, () => {
+    //alert('Options saved.');
+  });
 }
 
 function loadOptions() {

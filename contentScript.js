@@ -84,7 +84,7 @@ function replaceText(node, options) {
 				regex: /(-?\d+(?:\.\d{1,2})?)\s?°?\s?F\b(?=[\s.,°]|$)/gi,
 				converter: fahrenheitToCelsius,
 				unit: ' °C',
-				decimalPoints: 0,
+				decimalPoints: (value) => value <= 200 ? 2 : 0,
 			},
 			{
 				name: 'feetAndInchesToMeters',
@@ -167,7 +167,7 @@ function replaceText(node, options) {
 					
 					const metricValue = conversion.converter(value);
 					//return metricValue === null ? match : `${match} (${metricValue.toFixed(conversion.decimalPoints)}${conversion.unit})`;
-					return metricValue === null ? match : `${match} (${roundToNearest(metricValue, options[conversion.name + "Round"])}${conversion.unit})`;
+					return metricValue === null ? match : `${match} (${roundToNearest(metricValue, options[conversion.name + "Round"]).toFixed(conversion.decimalPoints)}${conversion.unit})`;
 				});
 			}
 			node.textContent = newText;
